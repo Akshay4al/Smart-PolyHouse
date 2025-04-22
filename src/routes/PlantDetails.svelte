@@ -47,7 +47,7 @@
       id: 1,
       name: "Tomato",
       requirements: {
-        temperature: 25,
+        temperature: 23,
         soilmoisture: 72,
         npk: { nitrogen: 20, phosphorus: 20, potassium: 20 }
       }
@@ -56,7 +56,7 @@
       id: 2,
       name: "Cucumber",
       requirements: {
-        temperature: 22,
+        temperature: 23,
         soilmoisture: 72,
         npk: { nitrogen: 10, phosphorus: 15, potassium: 20 }
       }
