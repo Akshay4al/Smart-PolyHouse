@@ -47,7 +47,7 @@
       id: 1,
       name: "Tomato",
       requirements: {
-        temperature: 23,
+        temperature: 27,
         soilmoisture: 72,
         npk: { nitrogen: 20, phosphorus: 20, potassium: 20 }
       }
