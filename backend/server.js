@@ -5,7 +5,7 @@ const sqlite3 = require("sqlite3").verbose();
 
 const app = express();
 const port = 3000;
-
+const hostname = '0.0.0.0'
 app.use(cors());
 app.use(express.json());
 
@@ -45,6 +45,6 @@ app.post("/register", async (req, res) => {
   );
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(port, hostname,() => {
+  console.log(`Server running on ${hostname}:${port}`);
 });
