@@ -15,6 +15,7 @@
     };
   }
 
+
   // Regenerate NPK every 2 seconds
   setInterval(() => {
     npkData = getRandomNPK();
