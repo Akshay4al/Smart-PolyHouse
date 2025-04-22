@@ -5,6 +5,7 @@
   // Current NPK values
   let npkData = { nitrogen: 0, phosphorus: 0, potassium: 0 };
 
+
   // Generate random NPK values between 60–70
   function getRandomNPK() {
     return {
