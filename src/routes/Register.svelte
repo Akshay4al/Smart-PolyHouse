@@ -15,7 +15,7 @@
     }
 
     try {
-      const res = await fetch("http://192.19.9.239:3000/register", {
+      const res = await fetch("https://backend-hlmw.onrender.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
