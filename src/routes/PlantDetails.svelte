@@ -29,7 +29,7 @@
 
   async function fetchSensorData() {
     try {
-      const response = await fetch("http://192.168.43.15/data");
+      const response = await fetch(' https://887d-2401-4900-33d1-4eeb-93d-d76c-f19c-326d.ngrok-free.app/data');
       if (!response.ok) throw new Error("Failed to fetch data");
 
       const data = await response.json();
