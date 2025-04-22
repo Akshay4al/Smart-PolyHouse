@@ -78,18 +78,25 @@
   $: selectedPlant = plantData.find(p => p.id === Number(id)) || plantData[0];
 
   async function toggleMotor() {
-    isLoading = true;
-    try {
-      await new Promise(resolve => setTimeout(resolve, 500));
-      isMotorRunning = !isMotorRunning;
-      console.log(`Motor turned ${isMotorRunning ? 'on' : 'off'}`);
-    } catch (error) {
-      console.error('Error toggling motor:', error);
-      alert('Failed to toggle motor. Please try again.');
-    } finally {
-      isLoading = false;
-    }
+  isLoading = true;
+  try {
+    const action = isMotorRunning ? 'off' : 'on';
+
+    const response = await fetch(`http://192.168.206.245/motor/${action}`, {
+      method: 'GET' // Backend expects GET for motor control
+    });
+
+    if (!response.ok) throw new Error('Motor command failed');
+
+    isMotorRunning = !isMotorRunning;
+    console.log(`Motor turned ${isMotorRunning ? 'ON' : 'OFF'}`);
+  } catch (error) {
+    console.error('Error toggling motor:', error);
+    alert('Failed to toggle motor. Please try again.');
+  } finally {
+    isLoading = false;
   }
+}
 </script>
 
 <div class="min-h-screen bg-[url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80')] bg-cover bg-center bg-fixed">
